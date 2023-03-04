@@ -11,12 +11,10 @@ print("Пятая переменная: ", type (e))
 
 
 
-c = [1, 2, 3, 9]
-l = [-1, 0.5, -0.45, 4.005]
-bl = max(c)
-b = max(l)
-print("Максимальное INT =", bl, "Максимальное FLOAT =", b)
-
+import sys
+max_int = sys.maxsize
+sys.float_info = sys.maxsize
+print(f'Максимальное INT = {max_int}\nМаксимальное FLOAT = {sys.float_info}')
 
 
 s = "Я люблю динамическую типизацию!"
