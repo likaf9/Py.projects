@@ -24,7 +24,7 @@ print(len(s.encode('utf16')))
 print(len(s.encode('utf32')))
 
 
-a = 1a = 1
+a = 1
 b = 2
 f = (a - b) * (a + b)
 print(f)
