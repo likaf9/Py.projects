@@ -24,8 +24,8 @@ print(len(s.encode('utf16')))
 print(len(s.encode('utf32')))
 
 
-a = 1
-b = 2
+a = int(input(‘Введите значение а’\t))
+b = int(input(‘Введите значение b’\t))
 f = (a - b) * (a + b)
 print(f)
 f = a**2 - 2*a*b + b**2
@@ -42,9 +42,9 @@ f = (a - b)*(a**2 + a*b + b**2)
 print(f)
 
 
-a = 1
-b = 2
-c = 3
+a = int(input(‘Введите значение а’\t))
+b = int(input(‘Введите значение b’\t))
+c = int(input(‘Введите значение а’\t))
 f = ((((a * a) + ((a + c)**2) / (10 * b))- (c**2 * a * 4))**(-1/2))
 
 
