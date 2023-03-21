@@ -1,3 +1,5 @@
+#1
+
 arr = []
 n = int(input("Введите количество элементов в массиве: "))
 for i in range(n):
@@ -39,8 +41,9 @@ prod_val = 1
 for i in arr:
     prod_val *= i
 
-import random
+#2
 
+import random
 list1 = [[random.randint(1, 10) for j in range(4)] for i in range(2)]
 list2 = [lst.copy() for lst in list1]
 list2[0][3] = 100
