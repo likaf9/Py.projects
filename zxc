@@ -1,0 +1,47 @@
+arr = []
+n = int(input("Введите количество элементов в массиве: "))
+for i in range(n):
+    arr.append(int(input("Введите значение элемента: ")))
+
+max_val = arr[0]
+for i in arr:
+    if i > max_val:
+        max_val = i
+max_val_func = max(arr)
+
+min_val = arr[0]
+for i in arr:
+    if i < min_val:
+        min_val = i
+min_val_func = min(arr)
+
+search_val = int(input("Введите искомое значение: "))
+found = False
+for i in range(n):
+    if arr[i] == search_val:
+        print("Индекс элемента:", i)
+        found = True
+        break
+if not found:
+    print("-1")
+
+count = 0
+for i in arr:
+    count += 1
+count_func = len(arr)
+
+sum_val = 0
+for i in arr:
+    sum_val += i
+sum_val_func = sum(arr)
+
+prod_val = 1
+for i in arr:
+    prod_val *= i
+
+import random
+
+list1 = [[random.randint(1, 10) for j in range(4)] for i in range(2)]
+list2 = [lst.copy() for lst in list1]
+list2[0][3] = 100
+print(f"list1{list1}\t list2{list2}")
