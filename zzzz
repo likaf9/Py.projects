@@ -1,0 +1,62 @@
+z = int(input("Превое число:"))
+x = int(input("Разность:"))
+c = int(input("Номер последнего числа:"))
+sum = (c / 2) * ( 2 * z + (c - 1) * x)
+print("Сумма арифметической прогрессии:", sum)
+
+z = int(input("Превое число:"))
+x = int(input("Разность:"))
+c = int(input("Номер последнего числа:"))
+sum = 0
+for i in range(z, z + x * c, x):
+    sum += i
+print("Сумма арифметической прогрессии:", sum)
+
+z = int(input("Превое число:"))
+x = int(input("Разность:"))
+c = int(input("Номер последнего числа:"))
+sum = z * (1 - x**c) / (1 - x)
+print("Сумма геометрической прогрессии:", sum)
+
+z = int(input("Превое число:"))
+x = int(input("Разность:"))
+c = int(input("Номер последнего числа:"))
+sum = 0
+for i in range(c):
+    sum += z * x**i
+print("Сумма геометрической прогрессии:", sum)
+
+def binary_search(arr, z):
+    low = 0
+    high = len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] < z:
+            low = mid + 1
+        elif arr[mid] > z:
+            high = mid - 1
+        else:
+            return True
+    return False
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+z = int(input())
+if binary_search(arr, z):
+    print("Значение найдено")
+else:
+    print("Значение не найдено")
+    
+   
+   def coin_change(amount, coins):
+    coins.sort(reverse=True)
+    coin_count = [0] * len(coins)
+    for i, coin in enumerate(coins):
+        coin_count[i] = amount // coin
+        amount = amount % coin
+    return coin_count
+coins = [1, 2, 5, 10, 20, 50, 100, 500, 1000, 2000, 5000]
+amount = int(input("Cумма:"))
+coin_count = coin_change(amount, coins)
+
+print("Количество купюр:")
+for i, coin in enumerate(coins):
+    print("{} - {}".format(coin, coin_count[i]))
