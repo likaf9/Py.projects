@@ -1,0 +1,121 @@
+#работа со списками 
+# Заполнение массива значениями с консоли
+n = int(input('Введите размер массива: '))
+arr = []
+for i in range(n):
+    arr.append(int(input(f'Введите {i+1}-й элемент массива: ')))
+
+# Нахождение максимального значения циклом и функцией
+max_value = arr[0]
+for i in range(1, n):
+    if arr[i] > max_value:
+        max_value = arr[i]
+print(f'Максимальное значение циклом: {max_value}')
+
+max_value = max(arr)
+print(f'Максимальное значение функцией: {max_value}')
+
+# Нахождение минимального значения циклом и функцией
+min_value = arr[0]
+for i in range(1, n):
+    if arr[i] < min_value:
+        min_value = arr[i]
+print(f'Минимальное значение циклом: {min_value}')
+
+min_value = min(arr)
+print(f'Минимальное значение функцией: {min_value}')
+
+# Нахождение среднего значения массива
+avg_value = sum(arr) / n
+print(f'Среднее значение массива: {avg_value}')
+
+# Линейный поиск значения
+search_value = int(input('Введите значение для поиска: '))
+index = -1
+for i in range(n):
+    if arr[i] == search_value:
+        index = i
+        break
+print(f'Индекс значения {search_value}: {index}')
+
+# Нахождение количества элементов циклом и функцией
+count = 0
+for i in range(n):
+    if arr[i] % 2 == 0:
+        count += 1
+print(f'Количество четных элементов циклом: {count}')
+
+count = len([x for x in arr if x % 2 == 0])
+print(f'Количество четных элементов функцией: {count}')
+
+# Нахождение суммы значений циклом и функцией
+sum_value = 0
+for i in range(n):
+    sum_value += arr[i]
+print(f'Сумма значений циклом: {sum_value}')
+
+sum_value = sum(arr)
+print(f'Сумма значений функцией: {sum_value}')
+
+# Нахождение произведения значений циклом и функцией
+prod_value = 1
+for i in range(n):
+    prod_value *= arr[i]
+print(f'Произведение значений циклом: {prod_value}')
+
+from functools import reduce
+prod_value = reduce(lambda x, y: x * y, arr)
+print(f'Произведение значений функцией: {prod_value}')
+
+
+
+
+list1 = [[1, 2, 3, 4], [1, 2, 3, 5]]
+list2 = copy.deepcopy(list1)
+list2[0][3] = 100 
+print(f'list1:{list1}\t list2:{list2}')
+
+#Исходная система уравнений:
+
+2x1 + 3x2 = 6
+4x1 + 9x2 = 15
+
+#Матрица системы:
+
+A = [[2, 3], [4, 9]]
+
+#Определитель матрицы системы:
+
+det(A) = 2*9 - 3*4 = 6
+
+#Матрицы A1 и A2:
+
+A1 = [[6, 3], [15, 9]]
+A2 = [[2, 6], [4, 15]]
+
+#Определители матриц A1 и A2:
+
+det(A1) = 6*9 - 3*15 = 3
+det(A2) = 2*9 - 6*4 = -10
+
+#Решение СЛАУ:
+
+x1 = int(input("det(A1)/det(A) = 3/6 = 0.5"))
+x2 = int(input("det(A2)/det(A) = -10/6 = -1.67"))
+
+print(x1, x2)
+
+#Теперь построим график уравнений:
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(-5, 5, 100)
+y1 = (6 - 2*x)/3
+y2 = (15 - 4*x)/9
+
+plt.plot(x, y1, label='2x1 + 3x2 = 6')
+plt.plot(x, y2, label='4x1 + 9x2 = 15')
+plt.legend()
+plt.grid()
+plt.show()
